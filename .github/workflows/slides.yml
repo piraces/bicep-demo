@@ -11,13 +11,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Read .nvmrc
+      id: node_version
+      run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
 
-    - name: Build & Deploy to GitHub Pages
-      uses: ralexander-phi/marp-action@1.0.0
-      env: 
-        MARP_ARGS: "slides/main.md -o index.html"
+    - name: Setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ steps.node_version.outputs.NODE_VERSION }}
 
+    - name: Compile marp markdown slides to HTML
+      run: npm_config_yes=true npx @marp-team/marp-cli@latest slides/main.md -o public/index.html
+
+    - name: Deploy to Github Pages
+      uses: crazy-max/ghaction-github-pages@v2
+      with:
+        build_dir: public
+      env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_REPOSITORY: ${{ github.repository }}
-        PUBLISH_TO_BRANCH: gh-pages
-        BASE_URL: https://piraces.github.io/bicep-demo/
