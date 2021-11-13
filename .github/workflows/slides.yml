@@ -21,7 +21,16 @@ jobs:
         node-version: ${{ steps.node_version.outputs.NODE_VERSION }}
 
     - name: Compile marp markdown slides to HTML
-      run: npm_config_yes=true npx @marp-team/marp-cli@latest slides/main.md -o public/index.html
+      run: npm_config_yes=true npx @marp-team/marp-cli@latest --title 'Arrancando curso 2021-2022 con fuerza - Bicep! 💪' --author 'Raúl Piracés' --url 'https://piraces.github.io/bicep-demo' --og-image 'https://piraces.github.io/bicep-demo/bicep.png' slides/main.md -o public/index.html
+
+    - name: Compile marp markdown slides to PDF
+      run: npm_config_yes=true npx @marp-team/marp-cli@latest --title 'Arrancando curso 2021-2022 con fuerza - Bicep! 💪' --allow-local-files --author 'Raúl Piracés' slides/main.md -o public/presentation.pdf
+
+    - name: Compile marp markdown slides to PPTX
+      run: npm_config_yes=true npx @marp-team/marp-cli@latest --title 'Arrancando curso 2021-2022 con fuerza - Bicep! 💪' --allow-local-files --author 'Raúl Piracés' slides/main.md -o public/presentation.pptx
+
+    - name: Copy images to deploy directory
+      run: cp -r slides/images public/images; cp bicep.png public
 
     - name: Deploy to Github Pages
       uses: crazy-max/ghaction-github-pages@v2
@@ -29,3 +38,15 @@ jobs:
         build_dir: public
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload presentation PDF as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Presentation_PDF
+        path: public/presentation.pdf
+
+    - name: Upload presentation PPTX as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Presentation_PPTX
+        path: public/presentation.pptx
