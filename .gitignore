@@ -1,2 +1,4 @@
 public
 arm_templates/**/*.bicep
+bicep_files/**/*.json
+!bicep_files/**/*.parameters.json
