@@ -23,3 +23,7 @@ The main goal of these templates is to show the process of migrating to Bicep.
 The `.bicep` files used in this demo are available in the folder `bicep_files` (each example in a subdirectory with a `README.md` file to help to manage it).
 
 The main goal of these files is to show the main funcionallity of Bicep and perform a test deployment to show all the process to deploy to Azure.
+
+## License
+
+MIT
