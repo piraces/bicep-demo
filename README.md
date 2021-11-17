@@ -14,12 +14,12 @@ All resources used in the demo are available in this repository.
 
 ## ARM Templates
 
-The ARM templates used in this demo are available in the folder `arm_templates` (each example in a subdirectory with a `reference.md` file to help to manage it).
+The ARM templates used in this demo are available in the folder `arm_templates` (each example in a subdirectory with a `README.md` file to help to manage it).
 
 The main goal of these templates is to show the process of migrating to Bicep.
 
 ## Bicep files
 
-The `.bicep` files used in this demo are available in the folder `bicep_files` (each example in a subdirectory with a `reference.md` file to help to manage it).
+The `.bicep` files used in this demo are available in the folder `bicep_files` (each example in a subdirectory with a `README.md` file to help to manage it).
 
 The main goal of these files is to show the main funcionallity of Bicep and perform a test deployment to show all the process to deploy to Azure.
