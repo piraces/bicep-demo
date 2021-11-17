@@ -11,7 +11,6 @@ paginate: false
 <!--
 _class:
  - lead
- - invert
 -->
 
 # Arrancando curso 2021-2022 con fuerza: Bicep! 💪
@@ -152,5 +151,5 @@ Tutoriales en [Microsoft Learn](https://docs.microsoft.com/en-us/azure/azure-res
 <!--
 _class:
  - lead
- - invert
+
 -->
