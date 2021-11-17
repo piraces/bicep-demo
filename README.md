@@ -24,6 +24,6 @@ The `.bicep` files used in this demo are available in the folder `bicep_files` (
 
 The main goal of these files is to show the main funcionallity of Bicep and perform a test deployment to show all the process to deploy to Azure.
 
-## License
+# License
 
 MIT
