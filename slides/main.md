@@ -40,11 +40,13 @@ Se trata de un DSL para desplegar recursos de Azure de forma declarativa
 - **No tenemos que manejar el estado**, Azure lo hará por nosotros
 
 ## Comparando Bicep y plantillas ARM
-<!--
-_backgroundColor: #1e1e1e
-_color: white
--->
-![Visión general de Bicep](images/compare.png)
+<style scoped>
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+![w:1900 center](images/compare.png)
 
 ## Visión general
 <!--
@@ -60,10 +62,7 @@ img[alt~="center"] {
 ![w:900 center](images/microsoft-bicep.png)
 
 ## Azure Resource Manager (ARM)
-<!--
-_backgroundColor: black
-_color: white
--->
+
 <style scoped>
 img[alt~="center"] {
   display: block;
